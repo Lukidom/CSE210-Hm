@@ -1,9 +1,23 @@
 using System;
 
-class Program
+namespace lukeSpace
 {
-    static void Main(string[] args)
+    public class Program
     {
-        Console.WriteLine("Hello Learning03 World!");
+        public Program()
+        {
+            // constructor
+        }
+
+        static void Main(string[] args)
+        {
+            Entry entry1 = new Entry();
+            
+            entry1.MakeEntry();
+            
+        }
+
+
     }
 }
+
