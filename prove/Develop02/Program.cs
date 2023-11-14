@@ -7,7 +7,7 @@ using System.Net;
 // using Journal;
 
 
-class Program
+class Program+
 {
     static void Main(string[] args)
     {
@@ -28,7 +28,7 @@ class Program
         // entry.Date = "temporary";
         entry.DateForJournal(); 
         entry.displayUserPrompt();
-        entry.MakeEntry();
+        entry.MakeEntry();++++++++++++++++
         displayMenu();
 
         
