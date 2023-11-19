@@ -7,7 +7,7 @@ using System.Net;
 // using Journal;
 
 
-class Program+
+class Program
 {
     static void Main(string[] args)
     {
