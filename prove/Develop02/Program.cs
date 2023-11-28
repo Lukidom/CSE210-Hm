@@ -11,60 +11,52 @@ class Program
 {
     static void Main(string[] args)
     {
-        //  print menu options
-        Console.WriteLine("Please select one of these options.\n 1. Write \n 2. Display \n 3. Load \n 4. Save \n 5. Quit");
-        string userResponse = Console.ReadLine();
-        int response = int.Parse(userResponse);
+        Journal masterJournal = new Journal(); // Global variable 
 
-    
+        string userResponse = "";
 
-        // Block of if statements
-        // if () ? x : y
-        
-        if (response == 1)
+        Console.Clear(); // makes the terminal nice and clean
+        while (userResponse != "5")
         {
-            Entry entry = new Entry();
-        // entry.userResponse = "temporary";
-        // entry.Date = "temporary";
-        entry.DateForJournal(); 
-        entry.displayUserPrompt();
-        entry.MakeEntry();++++++++++++++++
-        displayMenu();
+            //  print menu options
+            Console.WriteLine("Please select one of these options.\n 1. Write \n 2. Display \n 3. Load \n 4. Save \n 5. Quit");
+            userResponse = Console.ReadLine();
+            int response = int.Parse(userResponse);
 
-        
-        }
+            // Write
+            if (response == 1)
+            {
+                Entry entry = new Entry();
+                // entry.userResponse = "temporary";
+                // entry.Date = "temporary";
+                entry.DateForJournal(); 
+                entry.displayUserPrompt();
+                entry.MakeEntry();
+                masterJournal._entries.Add(entry);
+            }
+            // Display 
+            else if (response == 2)
+            {
+                // display previous Journal 
+            }
+            // Load
+            else if (response == 3)
+            {
+                Console.WriteLine("What is the file name?");
+                string nameOfFile = Console.ReadLine();
+                masterJournal.LoadJournalEntry();
+                // load previous journal entry
+            }
+            // Save
+            else if (response == 4)
+            {
+                masterJournal.SaveJournalEntry();
+            }
+            else
+            {
+                Console.WriteLine("That does not work. ");
+            }
 
-        else if (response == 2)
-        {
-            // display previous Journal 
-        }
-
-        else if (response == 3)
-        {
-            Console.WriteLine("What is the file name?");
-            string nameOfFile = Console.ReadLine();
-            Journal journal = new Journal();
-            journal.LoadJournalEntry();
-            displayMenu();
-            // load previous journal entry
-        }
-        else if (response == 4)
-        {
-            Journal journal1 = new Journal();
-            journal1.SaveJournalEntry();
-            displayMenu();
-            // Save journal entry
-
-        }
-        else if (response == 5)
-        {
-            // Quit
-        }
-        else
-        {
-            Console.WriteLine("That does not work. ");
-            displayMenu();
-            // quit
         }
         
 
@@ -74,12 +66,12 @@ class Program
         // journal.SaveJournalEntry();
 
     }
-    static void displayMenu()
-    {
-    Console.WriteLine("Please select one of these options.\n 1. Write \n 2. Display \n 3. Load \n 4. Save \n 5. Quit");
-        string userResponse = Console.ReadLine();
-        int response = int.Parse(userResponse);
+    // static void displayMenu()
+    // {
+    // Console.WriteLine("Please select one of these options.\n 1. Write \n 2. Display \n 3. Load \n 4. Save \n 5. Quit");
+    //     string userResponse = Console.ReadLine();
+    //     int response = int.Parse(userResponse);
 
-    }
+    // }
 
 }

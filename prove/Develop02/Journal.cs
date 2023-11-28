@@ -3,20 +3,18 @@ using System.IO;
 
 public class Journal
 {
-    // public List JournalList;
-    // string JournalList[temp]
-    
-
-
+    public List<Entry> _entries = new List<Entry>();
     public void SaveJournalEntry()
     {
         // saves entry to file
 
-        string fileName = "myFile.txt";
+        string fileName = "journal.txt";
         using (StreamWriter outputFile = new StreamWriter(fileName))
         {
-            outputFile.WriteLine("temporary");
-
+            foreach (Entry entry in _entries)
+            {
+                outputFile.WriteLine($"{entry.date},{entry.userResponse}");
+            }
         }
     }
 
@@ -35,10 +33,18 @@ public class Journal
 
         foreach (string line in lines)
         {
+            // Split up the string
             string[] parts = line.Split(",");
+            string date            = parts[0];
+            string userResponse = parts [1];
 
-            String firstname = parts[0];
-            string lastname = parts [1];
+            // Create a new entry for each line
+            Entry entry = new Entry();
+            entry.userResponse = userResponse;
+            entry.date = date;
+
+            // Add entry to the journal list
+            _entries.Add(entry);
         }
     }
     

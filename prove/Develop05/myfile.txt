@@ -1,0 +1,1 @@
+SimpleGoal,Do Homework,study 30 hours this week,100,true

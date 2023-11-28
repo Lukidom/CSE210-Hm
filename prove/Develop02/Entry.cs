@@ -14,15 +14,13 @@ using System.Security.Cryptography.X509Certificates;
     public string[] records;
 
     public string currentRecord;
-    public int Date;
+    public string date;
     // This is a constructor  figure it out. 
     public Entry()
     {
         
     
     }
-
-
 
     // method to display journal prompt. 
     public void displayUserPrompt()
@@ -38,16 +36,17 @@ using System.Security.Cryptography.X509Certificates;
     }
     public void MakeEntry()
     {
-        Console.WriteLine(">>");
-       string userEntry = Console.ReadLine();
-       
-        records = new string[] {userEntry};
+        Console.Write(">> ");
+        userResponse = Console.ReadLine();
+
+        // records = new string[] {userEntry};
     }
     public void DateForJournal()
     {
         DateTime theCurrentTime = DateTime.Now;
         string dateText = theCurrentTime.ToShortDateString();
-        Console.WriteLine(dateText);
+        // Console.WriteLine(dateText);
+        date = dateText;
 
     }
 
