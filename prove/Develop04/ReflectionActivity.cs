@@ -2,7 +2,7 @@ using System;
 
 public class ReflectionActivity : Activity
 {
-    // List prompts list<string>
+    List<string> prompts = ["think of when you had a defineing moment", "Think of a time when you did something difficult", "think of when you have helped someone in need"];
     // string list prompts list<string> 
 
     public ReflectionActivity() : base()
@@ -17,7 +17,10 @@ public class ReflectionActivity : Activity
 
     public void DisplayPrompts()
     {
-        
+        foreach (var prompt in prompts)
+        {
+            Console.WriteLine(prompt);
+        }
     }
     
 }
