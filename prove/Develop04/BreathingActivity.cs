@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 
 class BreathingActivity : Activity
 {
@@ -22,15 +23,29 @@ class BreathingActivity : Activity
     
     public void DisplayBreathingMessage()
     {
+        
         while (_timeDuration < _duration)
-        {
-                // need to fix this somehow. isnt running as well as i would like. 
-            Thread.Sleep(2000);
-            Console.WriteLine("breathe in..");
-            Thread.Sleep(2000);
-            Console.WriteLine("breathe out..");
-            DisplayTimer();
+        {            
+            Console.Write("breathe in..");
+            Thread.Sleep(700);
+            Console.Write(".");
+            Thread.Sleep(700);
+            Console.Write(".");
+            Thread.Sleep(700);
+            Console.Write(".");
+            Thread.Sleep(700);
+            Console.Write(".");
+            Thread.Sleep(700);
+            Console.Write("breathe out..");
+            Thread.Sleep(700);
+            Console.Write(".");
+            Thread.Sleep(700);
+            Console.Write(".");
+            Thread.Sleep(700);
+            Console.Write(".");
+            Thread.Sleep(700);
             _timeDuration++;
+
         }
     }
     

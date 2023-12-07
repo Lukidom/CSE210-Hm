@@ -12,7 +12,7 @@ public class Activity
     // class constructor
     public Activity()
     {
-        Console.WriteLine("testing");
+
     }
     public Activity(string nameActivity, string description, int duration)
     {
@@ -25,6 +25,7 @@ public class Activity
     public void DisplayStartingMessage()
     {
     Console.WriteLine($"{_nameActivity} - {_description}");
+    Console.WriteLine("how long would you like the activity to be?");
     int userTimer = Convert.ToInt32(Console.ReadLine());
     _duration = userTimer;
     }
@@ -32,10 +33,15 @@ public class Activity
     // Displays ending message after activity is complete
     public void DisplayEndingMessage()
     {
-        Console.WriteLine("ending message here");
+        Console.Clear();
+        Console.WriteLine("end program \n (press any key to exit)");
+        Console.ReadKey();
+        Environment.Exit(0);
+        Console.Clear();
+
     }
 
-    // Displays timer and animation of time given by user in DisplayStartingMessage()
+    // Displays timer and animation timer given by user in DisplayStartingMessage()
     public void DisplayTimer()
     {   
         // Console.WriteLine("input time desired: ");
@@ -45,11 +51,16 @@ public class Activity
    
         while (DateTime.Now < futureTime)
         {
-            Console.Write(".");
-            Thread.Sleep(2000);
-            Console.Write("\b \b");
-            Console.Write(":");
+            Console.Write("/");
+            Thread.Sleep(250);
+            Console.Write("\r-");
+            Thread.Sleep(250);
+            Console.Write("\r-\\");
+            Thread.Sleep(250);
+            Console.Write("\r-|");
+            Thread.Sleep(250);
         }
+        Console.WriteLine("\nTimes up! ");
     }
     
 
