@@ -11,10 +11,7 @@ class Activity
 
     }
 
-    abstract double CalculateDistance()
-    {
-        return 00;
-    }
+    public abstract double CalculateDistance();
 
     abstract double CalculateSpace()
     {

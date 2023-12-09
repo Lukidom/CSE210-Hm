@@ -1,4 +1,4 @@
-class Comments
+public class Comments
 {
     public string CommentsName; 
 
@@ -6,6 +6,7 @@ class Comments
 
     public Comments(string name, string text)
     {
-        
+        CommentsName = name;
+        CommentText = text;
     }
 }

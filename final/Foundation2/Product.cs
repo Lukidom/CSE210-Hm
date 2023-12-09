@@ -1,20 +1,23 @@
 class Products
 {
-    protected string name;
-    protected int Id;
-    protected double Price;
+    protected string _name;
+    protected int _id;
+    protected double _price;
 
-    protected double Quantity; 
+    protected double _quantity; 
 
     public Products(string name, int id, double price, int quantity)
     {
+        _name = name;
+        _id = id;
+        _price = price;
+        _quantity = quantity;
 
     }
 
     public double CalculatePrice()
     {
-        // temporary return
-        return 12;
+        return _price * _quantity;
     }
 
 

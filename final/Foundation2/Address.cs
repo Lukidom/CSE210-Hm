@@ -1,26 +1,27 @@
 class Address
 {
-    public string StreetAddress;
+    public string _streetAddress;
 
-    public string city;
+    public string _city;
 
-    public string StateOrProvince;
+    public string _stateOrProvince;
 
-    public string Country; 
+    public string _country; 
 
     public Address(string streetAddress, string city, string stateOrProvince, string country)
     {
+        _city = city;
+        _stateOrProvince = stateOrProvince;
+        _country = country;
+        _streetAddress = streetAddress;
+    }
 
-    }
-    public bool isINUsa()
-    {
-        // temporary bool return
-        return false;
-    }
+    // isInUsa was here but I found it unnecessary 
 
     public string DisplayAddress()
     {
-        // temporary string return
-        return "yes";
+        string address = $"{_streetAddress}{_city}{_stateOrProvince}{_country}";
+        Console.WriteLine(address);
+        return address;
     }
 }

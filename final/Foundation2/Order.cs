@@ -1,14 +1,16 @@
+using Foundation2.Product;
+
 class Order
 {
-    // List<products> products;
+    List<Product> products = new List<Product>();
 
-    // Customer customer
+    Customer 
 
-    public double Price;
+    protected double _price;
 
     public Order(Customer customer)
     {
-
+        
     }
 
     public double CalculateTotalOrderCost()
@@ -24,9 +26,9 @@ class Order
 
     }
 
-     public String DisplayPackinglabel()
+     public String DisplayPackingLabel()
      {
-        return " ";
+        return _price.name;
      }
 
      public string DisplayShippingLabel()

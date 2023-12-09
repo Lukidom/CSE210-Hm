@@ -11,6 +11,9 @@ class Event
     protected Address _address;
 
     public Event(string title, string description, string date, string time, Address address)
+    {
+        
+    }
 
     public string DisplayStandardDetails()
     {

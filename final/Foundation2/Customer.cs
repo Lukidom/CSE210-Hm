@@ -1,17 +1,26 @@
 class Customer
 {
-    protected string Name;
+    protected string _name;
 
-    protected Address CustomerAddress;
+    protected Address _customerAddress;
+
+    protected bool isInUSA = false;
 
     public Customer(string name, Address address)
     {
+        _name = name;
+        _customerAddress = address;
+        isInUSA = FromUnitedStates();
 
     }
 
     public bool FromUnitedStates()
-    {
-        //  temporary return
+    {   
+        if (_customerAddress._country == "USA")
+        {
+            return true;
+        }
         return false;
+
     }
 }
