@@ -19,6 +19,16 @@ class Products
     {
         return _price * _quantity;
     }
+    
+    public string GetName()
+    {
+        return _name;
+    }
+
+    public int GetId()
+    {
+        return _id;
+    }
 
 
 

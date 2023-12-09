@@ -23,4 +23,14 @@ class Customer
         return false;
 
     }
+
+    public string GetNameCustomer()
+    {
+        return _name;
+    }
+
+    public Address GetAddress()
+    {
+        return _customerAddress;
+    }
 }

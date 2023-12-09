@@ -1,44 +1,57 @@
-using Foundation2.Product;
 
 class Order
 {
-    List<Product> products = new List<Product>();
+    protected List<Products> orderContents = new List<Products>();
 
-    Customer 
+    protected Customer _customer;
 
     protected double _price;
 
     public Order(Customer customer)
     {
-        
-    }
+        this._customer = customer;
+    } 
 
     public double CalculateTotalOrderCost()
     {
-        // temporary return
-        return 12;
+        foreach (Products product in orderContents)
+        {
+            _price += product.CalculatePrice();
+        }
+        _price += CalculateShippingCost();
+        return _price;
+
     }
 
     public int CalculateShippingCost()
     {
         // temporary return
-        return 0;
+        if (_customer.FromUnitedStates())
+        {
+            return 5;
+        }
+        return 35;
 
     }
 
      public String DisplayPackingLabel()
      {
-        return _price.name;
+        var itemsString = "";
+        foreach (Products product in orderContents)
+        {
+            itemsString += product.GetName() + ", " + product.GetId();
+        }
+        return itemsString;
      }
 
      public string DisplayShippingLabel()
      {
-        return "";
+        return "Name:" + _customer.GetNameCustomer() + "\n Address" + _customer.GetAddress().DisplayAddress() + "\n";
      }
 
-     public void AddToProducts()
+     public void AddToProducts(Products product)
     {
-
+        orderContents.Add(product);
     }
 
 

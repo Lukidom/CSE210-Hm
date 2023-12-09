@@ -1,19 +1,25 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 class Program
 {
     static void Main(string[] args)
     {
         Products _products = new Products("test", 1, 20, 3);
-        double _firstProduct = _products.CalculatePrice();
+        List<Products> cart = new List<Products>
+        {
+            new Products("Apple", 1, 2.99, 3)
+        };
 
-        Address _address = new Address("teststreet","testcity", "teststateorprovince", "USA");
 
-        Customer customer = new Customer("luke", _address);
-        
+        Customer customer = new Customer("luke", new Address("teststreet","testcity", "teststateorprovince", "USA"));
+
         Order order = new Order(customer);
+        order.AddToProducts(cart[0]);
 
         
+        Console.WriteLine(order.DisplayPackingLabel());
+        Console.WriteLine(order.DisplayShippingLabel());
         
 
     }
