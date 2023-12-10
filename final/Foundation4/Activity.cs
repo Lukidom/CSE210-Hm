@@ -1,4 +1,6 @@
-class Activity
+using System.ComponentModel;
+
+public class Activity
 {
     protected string _activityType;
 
@@ -8,28 +10,33 @@ class Activity
 
     public Activity(string date, int length)
     {
+        _date = date;
 
+        _lengthInMinutes = length;
     }
 
-    public abstract double CalculateDistance();
+    public virtual double CalculateDistance()
+    {
+        return 00; 
+    }
 
-    abstract double CalculateSpace()
+    public virtual double CalculatePace()
     {
         return 00;
     }
 
-    abstract double CalculateSpeed()
+    public virtual double CalculateSpeed()
     {
         return 00;
     }
 
     public string DisplaySummary()
     {
-        return "";
+        return $"{_activityType} - {_date} - {_lengthInMinutes}";
     }
 
     public string GiveActivityType()
     {
-        return "";
+        return _activityType;
     }
 }   

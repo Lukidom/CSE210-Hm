@@ -10,12 +10,16 @@ class Address
 
     public Address(string streetaddress, string city, string state, string zipcode)
     {
+        _streetAddress = streetaddress;
+        _city = city;
+        _state = state;
+        _zipcode = zipcode;
 
     }
 
     public string DisplayAddress()
     {
-        return " ";
+        return $"{_streetAddress} - {_city} - {_state} - {_zipcode}";
     }
 
 }

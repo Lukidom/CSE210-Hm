@@ -5,12 +5,9 @@ class Reception : Event
 
     }
 
-    string DisplayExtraDetails()
-    {
-        return "";
-    }
+
     public string DisplayShortDescription()
     {
-        return "";
+        return "wedding of smith and angela";
     }
 }

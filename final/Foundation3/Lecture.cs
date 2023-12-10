@@ -2,7 +2,7 @@ class Lecture : Event
 {
     protected string _speaker;
 
-    protected int Capacity;
+    protected int _capacity;
 
     public Lecture(string title, string description, string date, string time, Address address, string speaker, int capacity) : base (title, description, date, time, address)
     {
@@ -11,10 +11,10 @@ class Lecture : Event
 
     public string DisplayExtraDetails()
     {
-        return "";
+        return $"{_speaker} - {_capacity}";
     }
     public string DisplayShortDescription()
     {
-        return "";
+        return "Learn about faith";
     }
 }

@@ -2,13 +2,23 @@ class Running : Activity
 {
     protected double _distance;
 
-    public Running (string date, int length, double distance) : base (date, length)
+    public Running(string date, int length, double distance) : base (date, length)
     {
-
+        _distance = distance;
     }
 
-    override double CalculateDistance()
+    public override double CalculateDistance()
     {
-        return 00;
+        return _distance;
+    }
+
+    public override double CalculatePace()
+    {
+        return _lengthInMinutes / _distance;
+    }
+
+    public override double CalculateSpeed()
+    {
+        return 60 / CalculatePace();
     }
 }

@@ -9,12 +9,12 @@ class OutdoorGathering : Event
 
     public string DisplayExtraDetails()
     {
-        return "";
+        return $"{_weatherForcast}";
     }
 
     public string DisplayShortDescription()
     {
-        return "";
+        return "lovely outdoor gathering";
     }
 
 }
