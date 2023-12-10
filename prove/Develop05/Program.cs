@@ -10,26 +10,43 @@ class Program
         List<string> names = new List<string>();
 
         // Main menu 
-        string choice = "";
-        Console.Write("Select a choice from the menu: ");
-        choice = Console.ReadLine();
+        int choice = 0;
+
+
 
         // Create a simple goal
-        SimpleGoal simpleGoal = new SimpleGoal();
-        goalList.Add(simpleGoal);
+        Console.WriteLine("menu options: \n 1 - simple goal \n 2 - Checklist goal \n 3 - Eternal Goal 4 - Display goal List");
+        choice = Int32.Parse(Console.ReadLine());
+        if (choice == 1)
+            {
+                SimpleGoal simpleGoal = new SimpleGoal("Get better at push ups", "do tons of pushups", 50);
+                goalList.Add(simpleGoal);
 
-        // Create a Checklist Goal
-        CheckListGoal checkListGoal = new CheckListGoal();
-        goalList.Add(checkListGoal);
+            }
+        else if (choice == 2)
+            {
+            // Create a Checklist Goal
+                CheckListGoal checkListGoal = new CheckListGoal("eat an apple", "Eat a bunch of apples", 15);
+                goalList.Add(checkListGoal);
+                
+            }
 
-        // Goal goal = new Goal();
+        else if (choice == 3)
+            {
+                EternalGoal eternalGoal = new EternalGoal("increase faith", "read scriptures", 30);
+
+            }
+        else if (choice == 4)
+            {
+
+                foreach (Goal goal in goalList)
+                {
+                    Console.WriteLine(goal.GetString());
+                }
+            }
 
         // Get the strings one by one in a foreach loop (you'll need
         // to do this when you save each goal to a file)
-        foreach (Goal goal in goalList)
-        {
-            Console.WriteLine(goal.GetString());
-        }
 
     }
 }

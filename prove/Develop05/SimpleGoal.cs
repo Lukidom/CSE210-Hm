@@ -1,5 +1,10 @@
 public class SimpleGoal : Goal
 {
+
+    public SimpleGoal(string name, string description, int pointValue) : base (name, description, pointValue)
+    {
+
+    }
     public void SetName(string name)
     {
         _name = name;
@@ -7,6 +12,6 @@ public class SimpleGoal : Goal
 
     public override string GetGoalType()
     {
-        return "SimpleGoal";
+        return "";
     }
 }
